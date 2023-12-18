@@ -1,0 +1,19 @@
+<div class="totalBalanceCard">
+  <header>
+    <h4>Total Balance</h4>
+    <button class="btn bg-white"><fa-icon [icon]="faEllipsis"></fa-icon></button>
+  </header>
+  <h2>{{ totalBalance.total_balance | currency:'USD':'symbol':'1.2-2' }}</h2>
+  <div class="progressBar">
+    <div class="w3-progress-container w3-round-large">
+      <div class="w3-progressbar w3-round-large" [style.width.%]="totalBalance.payment_done_percentage"></div>
+    </div>
+    <div class="progressBarContent">
+      <p>Monthly payment limit</p>
+      <p>
+        {{ totalBalance.payment_done_so_far | currency:'USD':'symbol':'1.0-0' }}
+        <span>/{{ totalBalance.monthly_payment_limit | currency:'USD':'symbol':'1.0-0' }}</span>
+      </p>
+    </div>
+  </div>
+</div>

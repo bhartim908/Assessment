@@ -1,0 +1,41 @@
+<div class="staticticssection">
+    <header>
+        <h4>Money statistics</h4>
+        <div class="buttons">
+            <button class="btn bg-white">Monthly<span><fa-icon [icon]="faAngleDown"></fa-icon></span></button>
+            <button class="btn"><fa-icon [icon]="faEllipsis"></fa-icon></button>
+        </div>
+    </header>
+    <div class="money-statistics">
+        <div class="statistics-data">
+            <h3>Total Income</h3>
+            <h2> {{ totalIncome?.value | currency:'USD':'symbol':'1.2-2' }}</h2>
+            <p>
+                <span [style.color]=totalIncome?.trend_color><fa-icon [icon]="faArrowTrendUp"></fa-icon>
+                    +{{totalIncome?.trend}}%</span>
+                from last month
+            </p>
+        </div>
+        <div class="statistics-data">
+            <h3>Total Expense</h3>
+            <h2> {{ totalExpense?.value | currency:'USD':'symbol':'1.2-2' }}</h2>
+            <p>
+                <span [style.color]=totalExpense?.trend_color><fa-icon [icon]="faArrowTrendUp"></fa-icon>
+                    +{{totalIncome?.trend}}%</span>
+                from last month
+            </p>
+        </div>
+        <div class="statistics-data">
+            <h3>Total Investment</h3>
+            <h2> {{ totalInvestment?.value | currency:'USD':'symbol':'1.2-2' }}</h2>
+            <p>
+                <span [style.color]=totalInvestment?.trend_color><fa-icon [icon]="faArrowTrendUp"></fa-icon>
+                    +{{totalIncome?.trend}}%</span>
+                from last month
+            </p>
+        </div>
+    </div>
+    <div class="statistics-graph">
+        <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"></highcharts-chart>
+    </div>
+</div>

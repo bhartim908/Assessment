@@ -1,0 +1,74 @@
+<div class="grid-container">
+  <header>
+    <h3>Transaction History</h3>
+    <div class="headingContent">
+      <input type="text" id="search-bar" placeholder="&#61442; Search" class="icon-placeholder">
+      <button class="btn"><fa-icon [icon]="faFilter"></fa-icon> Filter</button>
+      <button class="btn"><fa-icon [icon]="faFileExport"></fa-icon> Export</button>
+    </div>
+  </header>
+  <div class="container">
+    <div class="row header">
+      <div class="col">
+        Date
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Name
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Status
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Type
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Time
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Amount
+        <span>
+          <small><fa-icon [icon]="faAngleUp"></fa-icon></small>
+          <small><fa-icon [icon]="faAngleDown"></fa-icon></small>
+        </span>
+      </div>
+      <div class="col">Action</div>
+    </div>
+
+    <div class="row" *ngFor="let transaction of transactions; let i = index">
+      <div class="col">{{ transaction.date | date:'MMM d, y' }}</div>
+      <div class="col">{{ transaction.name }}</div>
+      <div class="col"><button type="button" [ngClass]="{'success': transaction.status === 'Success',
+       'bg-pending': transaction.status  === 'Pending',
+        'bg-failed': transaction.status === 'Failed'}">
+          {{ transaction.status }}</button></div>
+      <div class="col">{{ transaction.type}}</div>
+      <div class="col">{{ transaction.date | date:'hh:mm a'}}</div>
+      <div class="col">{{ transaction.amount | currency:'USD':'symbol':'1.2-2' }} </div>
+      <div class="col"><button class="btn" (click)="showPopup(transaction)"><fa-icon
+            [icon]="faEllipsis"></fa-icon></button></div>
+    </div>
+  </div>
+</div>
+<!-- Popup/modal -->
+<div class="popup" *ngIf="isPopupVisible">
+  <div class="popup-content">
+    <h2>Name: {{ selectedTransaction?.name }}</h2>
+    <p>Type: {{ selectedTransaction?.type }}</p>
+    <button class="btn bg-white" (click)="closePopup()">Close</button>
+  </div>
+</div>

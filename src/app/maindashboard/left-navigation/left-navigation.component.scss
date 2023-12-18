@@ -1,0 +1,181 @@
+$font-weight: bold;
+$white-color: white;
+$border: 1px solid rgb(19, 19, 19);
+$blue-color: rgb(9, 28, 52, 0.9);
+$payment-color: rgb(19, 19, 19, 0.2);
+$gray-color: #adadad;
+
+.container {
+    max-width: 290px;
+    position: relative;
+    height: calc(100% - 105px);
+    left: 0px;
+    margin: 0px;
+    padding: 0px 30px 0px 40px;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+    }
+
+    h3 {
+        margin: 0px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+.expandBrackets div {
+    cursor: pointer;
+    align-items: center;
+    margin: 0px;
+
+    h4 {
+        margin: 0px;
+        padding: 0px;
+        font-size: 10px;
+        height: 10px;
+        font-weight: $font-weight;
+    }
+}
+
+hr {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    color: $gray-color;
+}
+
+.menu {
+    margin: 5px 0px;
+
+    h3 {
+        opacity: 0.6;
+        font-size: 12px;
+        font-weight: $font-weight;
+    }
+
+    ul {
+        padding: 0%;
+        margin: 0%;
+    }
+
+    ul,
+    li {
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    p {
+        margin: 0px;
+        padding: 10px;
+        opacity: 0.6;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    fa-icon {
+        padding-right: 15px;
+    }
+}
+
+#overview {
+    background-color: $white-color;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    opacity: 1;
+}
+
+
+.general {
+    @extend .menu;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    margin-left: 48px;
+    width: 38px;
+    height: 22px;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        bottom: 1px;
+        background-color: $white-color;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+}
+
+.payment {
+    border-style: dotted;
+    width: 100%;
+    height: 145px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    border-color: $payment-color;
+
+    fa-icon {
+        margin-top: 40px;
+        font-size: 35px;
+        border-style: dotted;
+        border-radius: 50%;
+        color: $blue-color;
+
+    }
+
+    h3 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+#location-icon {
+    margin: 15px 10px 10px 60px;
+    position: fixed;
+    transform: rotate(-80deg);
+    font-size: 17px;
+}

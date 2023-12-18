@@ -1,0 +1,70 @@
+<div class="cardSection">
+  <header>
+    <h3>My Cards 1<small>/2</small></h3>
+    <div class="cardButton">
+      <button class="btn bg-white">&lt;</button>
+      <button class="btn bg-white">&gt;</button>
+    </div>
+  </header>
+  <div class="card">
+    <div class="card-top">
+      <fa-icon [icon]="faIdCard"></fa-icon>
+      <fa-icon [icon]="faRss"></fa-icon>
+    </div>
+    <hr>
+    <div class="card-bottom">
+      <p><small>* * * *</small>5678</p>
+      <h4>Bharathi Mysore <span>16/28</span><span><fa-icon [icon]="faCircleCheck"></fa-icon></span></h4>
+    </div>
+  </div>
+  <div class="block"></div>
+  <div class="addCard">
+    <p><fa-icon [icon]="faPlusCircle"></fa-icon>Add New Card</p>
+  </div>
+  <hr>
+  <div class="quickActions">
+    <h3>Quick Actions</h3>
+    <div class="buttons">
+      <div class="actionButton">
+        <fa-icon [icon]="faPlusSquare"></fa-icon>
+        <span>TopUp</span>
+      </div>
+      <div class="actionButton">
+        <fa-icon [icon]="faLocationArrow"></fa-icon>
+        <span>Location</span>
+      </div>
+      <div class="actionButton">
+        <fa-icon [icon]="faMoneyBill1"></fa-icon>
+        <span>Money</span>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="savingPlan">
+    <header>
+      <h3>Saving Plan</h3>
+      <fa-icon [icon]="faPlusCircle" [style]=""></fa-icon>
+    </header>
+    <div class="content" *ngFor="let data of savingPlanData">
+      <div class="savingText">
+        <div class="planContent">
+          <fa-icon [icon]="data.icon"></fa-icon>
+          <div class="item">
+            <p>{{data.item}}</p>
+            <span>Target {{data.target}}</span>
+          </div>
+        </div>
+        <button class="btn bg-white"><fa-icon [icon]="faEllipsis"></fa-icon></button>
+      </div>
+      <div class="progressBar">
+        <div class="progressBarContent">
+          <p>Total {{data.total}}</p>
+          <p>{{data.percentage}}%</p>
+        </div>
+        <div class="w3-progress-container w3-round-large">
+          <div class="w3-progressbar w3-round-large" [style.width.%]="data.percentage"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

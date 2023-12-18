@@ -1,0 +1,199 @@
+
+$font-weight:bold;
+$blue-color:rgb(9, 28, 52,0.9);
+$white-color:white;
+$border-black: 1px solid rgb(19, 19, 19,0.1);
+$opacity:0.5;
+$green: rgb(95, 152, 95);
+$red: rgba(247, 86, 42, 0.964);
+$gray: rgba(76, 77, 72, 0.964);
+$bg-green:  rgb(232, 251, 232);
+$bg-red:  rgb(243, 212, 202);
+$bg-gray: rgb(226, 225, 225);
+@mixin display_flex{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-container {
+  position:relative;
+  padding: 20px;
+  color:$blue-color;
+  max-height:500px;
+  background-color: $white-color;
+  font-weight: $font-weight; 
+   border: $border-black;
+   border-radius: 15px;
+
+   header {
+    @include display_flex;
+    margin-bottom: 20px;
+    color: $blue-color;
+  
+    h3{
+      font-size:20px;
+      font-weight: bold;
+      
+    }
+   
+    .headingContent{
+      font-size:15px;
+      font-weight: bold;
+     
+      #search-bar{
+      width: 200px;
+      padding:8px 20px;
+      border-radius: 8px;
+      background-color: $white-color;
+      border: $border-black;
+      }
+     
+      button{
+        padding:5px;
+        margin:0px 10px; 
+        border: $border-black;
+       font-weight: bold;
+       font-size: 13px;
+        fa-icon{
+          margin-right:6px;
+          opacity: $opacity;
+        }
+      }
+  }
+  }
+
+  .container {
+    max-height: 245px; 
+    max-width:100%;
+    overflow-y: auto;
+    border-radius: 5px;
+    background-color: $white-color;
+    
+    .row.header {
+      display: flex;
+      background-color: #f0f0f0;
+      padding: 10px;
+      font-weight: bold;
+      border-bottom: $border-black 
+    }
+    
+    .row {
+      display: flex;
+      align-items: center;
+      border-bottom:$border-black; 
+      padding:5px 0px 5px 0px;
+      
+      &:first-child{
+        opacity: $opacity;
+      }
+
+      .col {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+       
+        small {
+          display: block; 
+          margin-bottom: 10px; 
+          margin-left: 10px;
+          font-size: 6px; 
+          height:5px;
+          &:last-child{
+            margin-top:-6px;
+          }
+        }
+        &:first-child{
+          max-width: 120px;
+          text-align: right;
+        }
+
+        &:nth-child(2){
+          max-width:190px;
+          padding-left: 20px;
+        }
+
+        &:nth-child(3){
+          max-width:100px;
+          text-align: center;
+        }
+        &:nth-child(4){
+          max-width:150px;
+          text-align: center;
+        }
+        &:nth-child(5){
+          max-width:100px;
+          text-align: left;
+        }
+        &:nth-child(6){
+          max-width:100px;
+        }
+        &:last-child {
+          border-right: none;
+          text-align: right;
+          max-width: 40px;
+          padding:0px;
+        }
+      }
+    }
+    /* Button in the 'Action' column */
+    .col button.btn {
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+.icon-placeholder{ 
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: inline-block !important;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: black;
+}
+button{
+  padding:2px 3px 2px 3px;
+  border: none;
+  background-color:$white-color;
+  border-radius: 5px;
+  font-weight: $font-weight;
+  margin: 0px;
+}
+.success{
+  background-color: $bg-green;
+  color: $green;
+}
+.bg-failed{
+  background-color:  $bg-red;
+  color: $red;
+}
+.bg-pending{
+  background-color: $bg-gray;
+  color: $gray
+}
+/* Add these styles to your component's SCSS file */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $white-color;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup button {
+  margin-top: 10px;
+  border: $border-black;
+  border-radius: 10px;
+
+}

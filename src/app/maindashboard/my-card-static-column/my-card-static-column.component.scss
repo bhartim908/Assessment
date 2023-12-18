@@ -1,0 +1,252 @@
+$font-weight: bold;
+$blue-color: rgb(9, 28, 52);
+$color-blue: rgb(32, 55, 83);
+$border-black: 1px solid rgb(19, 19, 19, 0.1);
+$color: white;
+
+@mixin heading {
+    font-size: 15px;
+    font-weight: $font-weight;
+}
+
+@mixin display_flex {
+    display: flex;
+    align-items: center;
+}
+
+.cardSection {
+    border-radius: 20px;
+    padding: 20px 20px 20px 20px;
+    background-color: $color;
+    color: $blue-color;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+        @include heading;
+
+        small {
+            opacity: 0.5;
+        }
+    }
+
+    .cardButton {
+        button {
+            border: 1px solid rgb(215, 211, 211);
+            padding: 0px 8px 0px 8px;
+            margin: 0px 5px 0px 5px;
+            font-weight: $font-weight;
+        }
+    }
+}
+
+.card {
+    border-radius: 15px;
+
+    .card-top {
+        background-color: $color-blue;
+        padding: 12px 15px 40px 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        fa-icon {
+            font-size: 25px;
+            color: $color;
+        }
+    }
+
+    hr {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .card-bottom {
+        color: $color;
+        background-color: #748880;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: 5px 0px 5px 30px;
+        align-items: center;
+
+        p {
+
+            small {
+                font-size: 15px;
+                margin-bottom: -20px;
+                font-weight: bold;
+                padding-right: 10px;
+            }
+        }
+
+        h4 {
+            span {
+                margin-left: 40px;
+            }
+        }
+    }
+
+}
+
+.block {
+    height: 10px;
+    border: none;
+    background-color: rgb(188, 204, 198, 0.9);
+    margin: 0px 30px 0px 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.addCard {
+    margin-top: 20px;
+    text-align: center;
+
+    p {
+        border-radius: 10px;
+        border-style: dotted;
+        font-weight: $font-weight;
+        border-color: rgb(225, 218, 218);
+        padding: 10px 0px;
+
+        fa-icon {
+            margin-right: 10px;
+        }
+    }
+}
+
+.quickActions {
+    h3 {
+        @include heading;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        border: $border-black;
+        border-radius: 15px;
+        padding: 15px 20px 15px 20px;
+        justify-content: center;
+    }
+
+    .actionButton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px 30px 0px 30px;
+        border-left: $border-black;
+        opacity: 0.8;
+
+        fa-icon {
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: lighter;
+            border-radius: 10px;
+        }
+
+        span {
+            font-size: 12px;
+        }
+    }
+}
+
+.buttons .actionButton:nth-child(1) {
+    border-left: none;
+}
+
+
+.savingPlan {
+    header {
+        fa-icon {
+            font-size: 15px;
+        }
+    }
+
+    .content {
+        border: $border-black;
+        border-radius: 15px;
+        padding: 12px;
+        margin: 10px 0px 0px 0px;
+        color: $blue-color;
+
+        .savingText {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .planContent {
+                display: flex;
+            }
+
+            fa-icon {
+                border: $border-black;
+                padding: 10px;
+                border-radius: 10px;
+                font-size: 25px;
+                opacity: 0.8;
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                margin-left: 15px;
+                align-items: center;
+
+                p {
+                    margin: 5px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+
+                span {
+                    font-size: 12px;
+                    color: #6c7a89;
+                }
+            }
+
+            button {
+                fa-icon{
+                font-size: 12px;
+                border: none;
+                }
+            }
+        }
+
+        .progressBar {
+            margin: 0px;
+            padding: 10px 0px 0px 0px;
+
+            .progressBarContent {
+                display: flex;
+                justify-content: space-between;
+
+                P {
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin: 5px 0px 5px 0px;
+                }
+            }
+        }
+    }
+}
+
+.w3-progress-container {
+    width: 100%;
+    height: 8px;
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+.w3-progressbar {
+    background-color: $blue-color;
+    height: 100%;
+    position: absolute;
+    line-height: inherit
+}
+
+.w3-round-large {
+    border-radius: 16px !important
+}
